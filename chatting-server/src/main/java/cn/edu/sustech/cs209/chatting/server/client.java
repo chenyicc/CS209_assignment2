@@ -6,42 +6,39 @@ import java.util.HashMap;
 import java.util.List;
 
 public class client {
+
   List<String> clientlist;
   HashMap<String, Socket> hash;
-  public client()
-  {
-    clientlist=new ArrayList<>();
-    hash=new HashMap<>();
+
+  public client() {
+    clientlist = new ArrayList<>();
+    hash = new HashMap<>();
   }
-  public synchronized void addclient(String s)
-  {
+
+  public synchronized void addclient(String s) {
     this.clientlist.add(s);
   }
-  public synchronized void removeclient(String s)
-  {
 
-    clientlist.removeIf(t->t.equals(s));
+  public synchronized void removeclient(String s) {
+
+    clientlist.removeIf(t -> t.equals(s));
   }
 
-  public synchronized void putsocke(String s,Socket sock)
-  {
-    hash.put(s,sock);
-  }
-
-
-  public synchronized void removesocke(String s,Socket sock)
-  {
-    hash.remove(s,sock);
+  public synchronized void putsocke(String s, Socket sock) {
+    hash.put(s, sock);
   }
 
 
+  public synchronized void removesocke(String s, Socket sock) {
+    hash.remove(s, sock);
+  }
 
-  public List<String> getClientlist()
-  {
+
+  public List<String> getClientlist() {
     return clientlist;
   }
-  public HashMap<String, Socket>  getHash()
-  {
+
+  public HashMap<String, Socket> getHash() {
     return hash;
   }
 
