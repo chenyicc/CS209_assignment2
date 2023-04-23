@@ -125,6 +125,12 @@ public class Controller implements Initializable {
                 chatList.setItems(obstt);
 
               }
+              Alert ale = new Alert(AlertType.INFORMATION);
+              ale.setTitle("Dialog");
+              ale.setHeaderText(null);
+              ale.setContentText(
+                  sentb + " send a message to you");
+              ale.show();
 
             }
           });
